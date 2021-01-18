@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{022E07E1-8B74-4007-919A-7A32263E7E25}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YetkiliServisOtomasyonu</RootNamespace>
+    <AssemblyName>YetkiliServisOtomasyonu</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v17.1" />
+    <Reference Include="DevExpress.Data.v17.1" />
+    <Reference Include="DevExpress.Printing.v17.1.Core" />
+    <Reference Include="DevExpress.Utils.v17.1" />
+    <Reference Include="DevExpress.XtraBars.v17.1" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core" />
+    <Reference Include="DevExpress.XtraEditors.v17.1" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnaEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaEkran.Designer.cs">
+      <DependentUpon>AnaEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\CariTür\CariTurDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\CariTür\CariTurDuzenle.Designer.cs">
+      <DependentUpon>CariTurDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\CariTür\CariTurListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\CariTür\CariTurListe.Designer.cs">
+      <DependentUpon>CariTurListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\CariTür\CariTürKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\CariTür\CariTürKayit.Designer.cs">
+      <DependentUpon>CariTürKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Departman\DepartmanDüzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Departman\DepartmanDüzenle.Designer.cs">
+      <DependentUpon>DepartmanDüzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Departman\DepartmanKayıt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Departman\DepartmanKayıt.Designer.cs">
+      <DependentUpon>DepartmanKayıt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Departman\DepartmanListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Departman\DepartmanListe.Designer.cs">
+      <DependentUpon>DepartmanListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Kullanıcı\KullaniciDüzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Kullanıcı\KullaniciDüzenle.Designer.cs">
+      <DependentUpon>KullaniciDüzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Kullanıcı\KullaniciKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Kullanıcı\KullaniciKayit.Designer.cs">
+      <DependentUpon>KullaniciKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Kullanıcı\KullaniciListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ayarlar\Kullanıcı\KullaniciListe.Designer.cs">
+      <DependentUpon>KullaniciListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GirisCikis\GelirEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GirisCikis\GelirEkle.Designer.cs">
+      <DependentUpon>GelirEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GirisCikis\GiderEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GirisCikis\GiderEkle.Designer.cs">
+      <DependentUpon>GiderEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GirisCikis\UrunAlis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GirisCikis\UrunAlis.Designer.cs">
+      <DependentUpon>UrunAlis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GirisCikis\ÜrünSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GirisCikis\ÜrünSatis.Designer.cs">
+      <DependentUpon>ÜrünSatis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\CariKart\CariKartKayıt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\CariKart\CariKartKayıt.Designer.cs">
+      <DependentUpon>CariKartKayıt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\CariKart\CariKartListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\CariKart\CariKartListe.Designer.cs">
+      <DependentUpon>CariKartListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\DepoKart\DepoKartKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\DepoKart\DepoKartKayit.Designer.cs">
+      <DependentUpon>DepoKartKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\DepoKart\DepoListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\DepoKart\DepoListe.Designer.cs">
+      <DependentUpon>DepoListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\KasaKart\KasaKartKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\KasaKart\KasaKartKayit.Designer.cs">
+      <DependentUpon>KasaKartKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\KasaKart\KasaListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\KasaKart\KasaListe.Designer.cs">
+      <DependentUpon>KasaListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\NotKart\NotKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\NotKart\NotKayit.Designer.cs">
+      <DependentUpon>NotKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\NotKart\NotListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\NotKart\NotListesi.Designer.cs">
+      <DependentUpon>NotListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\ServisKart\ServisKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\ServisKart\ServisKayit.Designer.cs">
+      <DependentUpon>ServisKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\ServisKart\ServisListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\ServisKart\ServisListe.Designer.cs">
+      <DependentUpon>ServisListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\StokKart\StokKartKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\StokKart\StokKartKayit.Designer.cs">
+      <DependentUpon>StokKartKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\StokKart\StokListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\StokKart\StokListe.Designer.cs">
+      <DependentUpon>StokListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\VeresiyeKart\VeresiyeKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\VeresiyeKart\VeresiyeKayit.Designer.cs">
+      <DependentUpon>VeresiyeKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\VeresiyeKart\VeresiyeListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\VeresiyeKart\VeresiyeListesi.Designer.cs">
+      <DependentUpon>VeresiyeListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\VeresiyeKart\VeresiyeEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\VeresiyeKart\VeresiyeEkle.Designer.cs">
+      <DependentUpon>VeresiyeEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\VeresiyeKart\VeresiyeTahsilat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\VeresiyeKart\VeresiyeTahsilat.Designer.cs">
+      <DependentUpon>VeresiyeTahsilat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\Veresiye\TahsilatGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\Veresiye\TahsilatGiris.Designer.cs">
+      <DependentUpon>TahsilatGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kartlar\Veresiye\VeresiyeListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kartlar\Veresiye\VeresiyeListesi.Designer.cs">
+      <DependentUpon>VeresiyeListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raporlar\Günlük Notlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raporlar\Günlük Notlar.Designer.cs">
+      <DependentUpon>Günlük Notlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raporlar\GünlükServisPlanRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raporlar\GünlükServisPlanRaporu.Designer.cs">
+      <DependentUpon>GünlükServisPlanRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raporlar\KaraListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raporlar\KaraListe.Designer.cs">
+      <DependentUpon>KaraListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raporlar\KasaCikisRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raporlar\KasaCikisRapor.Designer.cs">
+      <DependentUpon>KasaCikisRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raporlar\KasaGirisRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raporlar\KasaGirisRapor.Designer.cs">
+      <DependentUpon>KasaGirisRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raporlar\KasaRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raporlar\KasaRapor.Designer.cs">
+      <DependentUpon>KasaRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raporlar\KritikStokListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raporlar\KritikStokListe.Designer.cs">
+      <DependentUpon>KritikStokListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raporlar\ServisPlanlamaListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raporlar\ServisPlanlamaListesi.Designer.cs">
+      <DependentUpon>ServisPlanlamaListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raporlar\StokListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raporlar\StokListe.Designer.cs">
+      <DependentUpon>StokListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raporlar\VeresiyeRaporListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raporlar\VeresiyeRaporListesi.Designer.cs">
+      <DependentUpon>VeresiyeRaporListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GirisEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GirisEkran.Designer.cs">
+      <DependentUpon>GirisEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblCari.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblCariTür.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblDepartman.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblDepo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblKasa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblKasaCikis.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblKasaDurum.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblKasaGiris.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblKullanici.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblNotlar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblServisDurum.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblServisler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblSiparisler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblStok.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblVeresiye.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblVeresiyeDurum.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnaEkran.resx">
+      <DependentUpon>AnaEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ayarlar\CariTür\CariTurDuzenle.resx">
+      <DependentUpon>CariTurDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ayarlar\CariTür\CariTurListe.resx">
+      <DependentUpon>CariTurListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ayarlar\CariTür\CariTürKayit.resx">
+      <DependentUpon>CariTürKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ayarlar\Departman\DepartmanDüzenle.resx">
+      <DependentUpon>DepartmanDüzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ayarlar\Departman\DepartmanKayıt.resx">
+      <DependentUpon>DepartmanKayıt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ayarlar\Departman\DepartmanListe.resx">
+      <DependentUpon>DepartmanListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ayarlar\Kullanıcı\KullaniciDüzenle.resx">
+      <DependentUpon>KullaniciDüzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ayarlar\Kullanıcı\KullaniciKayit.resx">
+      <DependentUpon>KullaniciKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ayarlar\Kullanıcı\KullaniciListe.resx">
+      <DependentUpon>KullaniciListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GirisCikis\GelirEkle.resx">
+      <DependentUpon>GelirEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GirisCikis\GiderEkle.resx">
+      <DependentUpon>GiderEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GirisCikis\UrunAlis.resx">
+      <DependentUpon>UrunAlis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GirisCikis\ÜrünSatis.resx">
+      <DependentUpon>ÜrünSatis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\CariKart\CariKartKayıt.resx">
+      <DependentUpon>CariKartKayıt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\CariKart\CariKartListe.resx">
+      <DependentUpon>CariKartListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\DepoKart\DepoKartKayit.resx">
+      <DependentUpon>DepoKartKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\DepoKart\DepoListe.resx">
+      <DependentUpon>DepoListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\KasaKart\KasaKartKayit.resx">
+      <DependentUpon>KasaKartKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\KasaKart\KasaListe.resx">
+      <DependentUpon>KasaListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\NotKart\NotKayit.resx">
+      <DependentUpon>NotKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\NotKart\NotListesi.resx">
+      <DependentUpon>NotListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\ServisKart\ServisKayit.resx">
+      <DependentUpon>ServisKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\ServisKart\ServisListe.resx">
+      <DependentUpon>ServisListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\StokKart\StokKartKayit.resx">
+      <DependentUpon>StokKartKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\StokKart\StokListe.resx">
+      <DependentUpon>StokListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\VeresiyeKart\VeresiyeKayit.resx">
+      <DependentUpon>VeresiyeKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\VeresiyeKart\VeresiyeListesi.resx">
+      <DependentUpon>VeresiyeListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\VeresiyeKart\VeresiyeEkle.resx">
+      <DependentUpon>VeresiyeEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\VeresiyeKart\VeresiyeTahsilat.resx">
+      <DependentUpon>VeresiyeTahsilat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\Veresiye\TahsilatGiris.resx">
+      <DependentUpon>TahsilatGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kartlar\Veresiye\VeresiyeListesi.resx">
+      <DependentUpon>VeresiyeListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raporlar\Günlük Notlar.resx">
+      <DependentUpon>Günlük Notlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raporlar\GünlükServisPlanRaporu.resx">
+      <DependentUpon>GünlükServisPlanRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raporlar\KaraListe.resx">
+      <DependentUpon>KaraListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raporlar\KasaCikisRapor.resx">
+      <DependentUpon>KasaCikisRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raporlar\KasaGirisRapor.resx">
+      <DependentUpon>KasaGirisRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raporlar\KasaRapor.resx">
+      <DependentUpon>KasaRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raporlar\KritikStokListe.resx">
+      <DependentUpon>KritikStokListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raporlar\ServisPlanlamaListesi.resx">
+      <DependentUpon>ServisPlanlamaListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raporlar\StokListe.resx">
+      <DependentUpon>StokListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raporlar\VeresiyeRaporListesi.resx">
+      <DependentUpon>VeresiyeRaporListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GirisEkran.resx">
+      <DependentUpon>GirisEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\unnamed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
